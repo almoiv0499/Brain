@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ru.game.brain.presentation.viewmodel.GameViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragment.GameFragment">
+
+        <TextView
+            android:id="@+id/timer_game"
+            style="@style/GameTaskTextViewSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{viewModel.liveDataTimer}"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/timer" />
+
+        <TextView
+            android:id="@+id/sum_value"
+            style="@style/GameTaskTextViewSettings"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/white"
+            android:textSize="100sp"
+            app:backgroundTint="@color/sum_value_light"
+            app:layout_constraintBottom_toTopOf="@id/first_value"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timer_game"
+            app:numberToText="@{viewModel.liveDataQuestion.sum}" />
+
+        <TextView
+            android:id="@+id/first_value"
+            style="@style/GameTaskTextViewSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginEnd="10dp"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            app:backgroundTint="@color/visible_number_light"
+            app:layout_constraintBottom_toTopOf="@id/current_result"
+            app:layout_constraintEnd_toStartOf="@id/second_value"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sum_value"
+            app:numberToText="@{viewModel.liveDataQuestion.visibleNumber}" />
+
+        <TextView
+            android:id="@+id/second_value"
+            style="@style/GameTaskTextViewSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginStart="10dp"
+            android:padding="10dp"
+            android:text="?"
+            android:textColor="@color/white"
+            android:textSize="60sp"
+            app:backgroundTint="@color/guest_number_light"
+            app:layout_constraintBottom_toTopOf="@id/current_result"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/first_value"
+            app:layout_constraintTop_toBottomOf="@id/sum_value" />
+
+        <TextView
+            android:id="@+id/current_result"
+            style="@style/GameTaskTextViewSettings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:text="@{viewModel.liveDataProgressAnswers}"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/indicator_progress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewModelEnoughCountRightAnswers="@{viewModel.liveDataEnoughCountRightAnswers}" />
+
+        <com.google.android.material.progressindicator.LinearProgressIndicator
+            android:id="@+id/indicator_progress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
+            android:progress="@{viewModel.liveDataPercentRightAnswers}"
+            android:secondaryProgress="@{viewModel.liveDataMinPercent}"
+            app:layout_constraintBottom_toBottomOf="@id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:viewModelEnoughPercentRightAnswers="@{viewModel.liveDataEnoughPercentRightAnswers}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/first_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(0).toString()}"
+            app:backgroundTint="@color/option_answers_1_light"
+            app:layout_constraintBottom_toTopOf="@id/fourth_answer"
+            app:layout_constraintEnd_toStartOf="@id/second_answer"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/second_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(1).toString()}"
+            app:backgroundTint="@color/option_answers_2_light"
+            app:layout_constraintBottom_toTopOf="@id/fifth_answer"
+            app:layout_constraintEnd_toStartOf="@id/third_answer"
+            app:layout_constraintStart_toEndOf="@id/first_answer"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/third_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(2).toString()}"
+            app:backgroundTint="@color/option_answers_3_light"
+            app:layout_constraintBottom_toTopOf="@id/sixth_answer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/second_answer"
+            app:layout_constraintTop_toBottomOf="@id/guideline"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fourth_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(3).toString()}"
+            app:backgroundTint="@color/option_answers_1_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/fifth_answer"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/first_answer"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fifth_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(4).toString()}"
+            app:backgroundTint="@color/option_answers_2_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/sixth_answer"
+            app:layout_constraintStart_toEndOf="@id/fourth_answer"
+            app:layout_constraintTop_toBottomOf="@id/second_answer"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sixth_answer"
+            style="@style/OptionAnswerTextViewSettings"
+            android:text="@{viewModel.liveDataQuestion.options.get(5).toString()}"
+            app:backgroundTint="@color/option_answers_3_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fifth_answer"
+            app:layout_constraintTop_toBottomOf="@id/third_answer"
+            app:onClickChooseAnswer="@{(option) -> viewModel.chooseAnswer(option)}" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

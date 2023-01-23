@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".presentation.fragment.ChooseLevelFragment">
+
+        <TextView
+            android:id="@+id/choose_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/cambay_bold"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/choose_level_text"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_choose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/button_level_test"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_title" />
+
+        <ImageView
+            android:id="@+id/image_choose"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/image_choose"
+            android:padding="10dp"
+            android:src="@drawable/ic_choose"
+            app:layout_constraintBottom_toBottomOf="@id/guideline_choose"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/choose_title" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_level_test"
+            style="@style/ChooseLevelTextViewsSettings"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/level_test"
+            app:backgroundTint="@color/test_light"
+            app:layout_constraintBottom_toTopOf="@id/button_level_middle"
+            app:layout_constraintEnd_toStartOf="@id/button_level_easy"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_level_easy"
+            style="@style/ChooseLevelTextViewsSettings"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/level_easy"
+            app:backgroundTint="@color/easy_light"
+            app:layout_constraintBottom_toTopOf="@id/button_level_hard"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_level_test" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_level_middle"
+            style="@style/ChooseLevelTextViewsSettings"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/level_middle"
+            app:backgroundTint="@color/middle_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button_level_hard"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_level_hard"
+            style="@style/ChooseLevelTextViewsSettings"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/level_hard"
+            app:backgroundTint="@color/hard_light"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_level_middle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
