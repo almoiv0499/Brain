@@ -3,17 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/background_for_result.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/background_for_result_dark.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_arrow_dark.xml" value="0.26" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_brain_dark.xml" value="0.26" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_choose.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_choose_dark.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_crying.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_crying_dark.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/ic_smiley_dark.xml" value="0.26" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/rounded_button.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable-v24/rounded_button_dark.xml" value="0.18" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/background_for_result.xml" value="0.178" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/background_for_result_light.xml" value="0.1045" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/circle_background.xml" value="0.178" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_arrow.xml" value="0.178" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_arrow_light.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_brain.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_brain_light.xml" value="0.2035" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_choose.xml" value="0.178" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_choose_light.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_crying.xml" value="0.18" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_sad.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_smile.xml" value="0.2035" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_smiley.xml" value="0.178" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_smiley_light.xml" value="0.2035" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/ic_trophy.xml" value="0.279" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/rounded_button.xml" value="0.178" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/drawable/rounded_button_light.xml" value="0.2035" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/fragment_choose_level.xml" value="0.27447916666666666" />
-        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/fragment_game.xml" value="0.2604166666666667" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/fragment_game.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/fragment_game_finished.xml" value="0.27447916666666666" />
         <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/layout/fragment_welcome.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android/new_workspace/Brain/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2035" />
       </map>
     </option>
   </component>

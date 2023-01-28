@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,89 +10,101 @@
             type="ru.game.brain.presentation.viewmodel.GameViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        style="@style/BackgroundForFragments"
         tools:context=".presentation.fragment.GameFragment">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/timer_game"
-            style="@style/GameTaskTextViewSettings"
+            style="@style/TimerGameFragment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/cambay_bold"
+            android:gravity="center"
+            android:padding="10dp"
             android:text="@{viewModel.liveDataTimer}"
-            android:textColor="@color/black"
             android:textSize="25sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/timer" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/sum_value"
-            style="@style/GameTaskTextViewSettings"
+            style="@style/SumValueGameFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="70dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="70dp"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/white"
-            android:textSize="100sp"
-            app:backgroundTint="@color/sum_value_light"
-            app:layout_constraintBottom_toTopOf="@id/first_value"
+            android:fontFamily="@font/cambay_bold"
+            android:gravity="center"
+            android:textSize="90sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/space"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/timer_game"
             app:numberToText="@{viewModel.liveDataQuestion.sum}" />
 
-        <TextView
+        <Space
+            android:id="@+id/space"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sum_value" />
+
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/first_value"
-            style="@style/GameTaskTextViewSettings"
+            style="@style/AddendValuesGameFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/cambay_bold"
+            android:gravity="center"
             android:padding="10dp"
-            android:textColor="@color/white"
             android:textSize="60sp"
-            app:backgroundTint="@color/visible_number_light"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/current_result"
             app:layout_constraintEnd_toStartOf="@id/second_value"
-            app:layout_constraintHorizontal_chainStyle="packed"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sum_value"
+            app:layout_constraintTop_toBottomOf="@id/space"
             app:numberToText="@{viewModel.liveDataQuestion.visibleNumber}" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/second_value"
-            style="@style/GameTaskTextViewSettings"
+            style="@style/AddendValuesGameFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:layout_marginStart="10dp"
+            android:fontFamily="@font/cambay_bold"
+            android:text="@string/question"
+            android:gravity="center"
             android:padding="10dp"
-            android:text="?"
-            android:textColor="@color/white"
             android:textSize="60sp"
-            app:backgroundTint="@color/guest_number_light"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/current_result"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/first_value"
-            app:layout_constraintTop_toBottomOf="@id/sum_value" />
+            app:layout_constraintTop_toBottomOf="@id/space" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/current_result"
-            style="@style/GameTaskTextViewSettings"
+            style="@style/ProgressValueGameFragment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="25dp"
+            android:fontFamily="@font/cambay_bold"
+            android:gravity="center"
             android:text="@{viewModel.liveDataProgressAnswers}"
-            android:textColor="@color/black"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@id/indicator_progress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,9 +126,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/first_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(0).toString()}"
-            app:backgroundTint="@color/option_answers_1_light"
             app:layout_constraintBottom_toTopOf="@id/fourth_answer"
             app:layout_constraintEnd_toStartOf="@id/second_answer"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -125,9 +138,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/second_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(1).toString()}"
-            app:backgroundTint="@color/option_answers_2_light"
             app:layout_constraintBottom_toTopOf="@id/fifth_answer"
             app:layout_constraintEnd_toStartOf="@id/third_answer"
             app:layout_constraintStart_toEndOf="@id/first_answer"
@@ -136,9 +148,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/third_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(2).toString()}"
-            app:backgroundTint="@color/option_answers_3_light"
             app:layout_constraintBottom_toTopOf="@id/sixth_answer"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/second_answer"
@@ -147,9 +158,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fourth_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(3).toString()}"
-            app:backgroundTint="@color/option_answers_1_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/fifth_answer"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -159,9 +169,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/fifth_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(4).toString()}"
-            app:backgroundTint="@color/option_answers_2_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/sixth_answer"
             app:layout_constraintStart_toEndOf="@id/fourth_answer"
@@ -170,9 +179,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sixth_answer"
-            style="@style/OptionAnswerTextViewSettings"
+            style="@style/OptionAnswerGameFragment"
             android:text="@{viewModel.liveDataQuestion.options.get(5).toString()}"
-            app:backgroundTint="@color/option_answers_3_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fifth_answer"

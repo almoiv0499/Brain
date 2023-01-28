@@ -45,6 +45,6 @@ private fun calculateRightAnswersPercent(gameResults: GameResult) = with(gameRes
 }
 
 private fun getImageBasedResult(isWin: Boolean): Int {
-    return if (isWin) R.drawable.ic_smiley
-    else R.drawable.ic_crying
+    return if (isWin) R.drawable.ic_smile
+    else R.drawable.ic_sad
 }

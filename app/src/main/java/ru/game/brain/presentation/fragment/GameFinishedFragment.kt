@@ -1,17 +1,39 @@
 package ru.game.brain.presentation.fragment
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
+import ru.game.app.App
 import ru.game.brain.databinding.FragmentGameFinishedBinding
+import ru.game.brain.presentation.fragment.base.BaseFragment
+import ru.game.brain.presentation.viewmodel.GameFinishedViewModel
+import ru.game.brain.presentation.viewmodelfactory.GameViewModelFactory
+import ru.game.di.component.DaggerAppComponent
+import javax.inject.Inject
 
-class GameFinishedFragment : Fragment() {
+class GameFinishedFragment : BaseFragment<GameFinishedViewModel>() {
 
     private lateinit var binding: FragmentGameFinishedBinding
+
+    @Inject
+    lateinit var viewModelFactory: GameViewModelFactory
+
+    override val viewModel by lazy(LazyThreadSafetyMode.NONE) {
+        ViewModelProvider(requireActivity(), viewModelFactory)[GameFinishedViewModel::class.java]
+    }
+
+    private val component by lazy(LazyThreadSafetyMode.NONE) {
+        (requireActivity().applicationContext as App).component
+    }
+
+    override fun onAttach(context: Context) {
+        component.inject(this)
+        super.onAttach(context)
+    }
 
     private val args by navArgs<GameFinishedFragmentArgs>()
 
@@ -28,10 +50,11 @@ class GameFinishedFragment : Fragment() {
 
         binding.gameResult = args.gameResults
         binding.buttonTryAgain.setOnClickListener {
-            retryGame()
+            navigateToChooseLevelFragment()
         }
     }
-    private fun retryGame() {
-        findNavController().popBackStack()
+
+    private fun navigateToChooseLevelFragment() {
+        viewModel.navigateToChooseLevelFragment()
     }
 }

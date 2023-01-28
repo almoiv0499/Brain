@@ -4,7 +4,8 @@ import android.app.Application
 import android.os.CountDownTimer
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
 import ru.game.brain.R
 import ru.game.brain.domain.model.GameResult
 import ru.game.brain.domain.model.GameSettings
@@ -12,13 +13,17 @@ import ru.game.brain.domain.model.Level
 import ru.game.brain.domain.model.Question
 import ru.game.brain.domain.usecase.GenerateQuestionUseCase
 import ru.game.brain.domain.usecase.GetGameSettingsUseCase
+import ru.game.brain.presentation.fragment.GameFragmentDirections
+import ru.game.brain.presentation.viewmodel.base.BaseViewModel
+import ru.game.di.annotation.QualifierLevel
+import javax.inject.Inject
 
-class GameViewModel(
+class GameViewModel @Inject constructor(
     private val generateQuestionUseCase: GenerateQuestionUseCase,
     private val getGameSettingsUseCase: GetGameSettingsUseCase,
     private val application: Application,
-    private val level: Level
-) : ViewModel() {
+    @QualifierLevel private val level: Level
+) : BaseViewModel() {
 
     private lateinit var gameSettingsView: GameSettings
     private var timer: CountDownTimer? = null
@@ -95,15 +100,15 @@ class GameViewModel(
     }
 
     private fun generateQuestion() {
-        _liveDataQuestion.value =
-            generateQuestionUseCase(gameSettingsView.maxSumValue)
+        viewModelScope.launch {
+            _liveDataQuestion.value = generateQuestionUseCase(gameSettingsView.maxSumValue)!!
+        }
     }
 
     private fun getGameSettings() {
-        this.gameSettingsView = getGameSettingsUseCase(level)
+        gameSettingsView = getGameSettingsUseCase(level)
         _liveDataMinPercent.value = gameSettingsView.minPercentOfRightAnswer
     }
-
 
     private fun startTimer() {
         timer = object : CountDownTimer(
@@ -136,6 +141,10 @@ class GameViewModel(
             countOfQuestions = countQuestions,
             gameSettings = gameSettingsView
         )
+    }
+
+    fun navigateToGameFinishedFragment(gameResult: GameResult) {
+        navigate(GameFragmentDirections.actionGameFragmentToGameFinishedFragment(gameResult))
     }
 
     override fun onCleared() {

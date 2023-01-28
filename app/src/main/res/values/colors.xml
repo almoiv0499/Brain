@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="test_light">#000000</color>
-    <color name="easy_light">#495057</color>
-    <color name="middle_light">#343A40</color>
-    <color name="hard_light">#212529</color>
-    <color name="option_answers_1_light">#0A0A0A</color>
-    <color name="option_answers_2_light">#1A1A1A</color>
-    <color name="option_answers_3_light">#2A2A2A</color>
-    <color name="sum_value_light">#111111</color>
-    <color name="visible_number_light">#4F4F4F</color>
-    <color name="guest_number_light">#8F8F8F</color>
-    <color name="background_color_for_result_light">#b0b0b0</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+    <color name="background_screen_light">#f7f0f5</color>
+    <color name="button_background_color_light">#433633</color>
+    <color name="text_color_inside_shape_light">#f7f0f5</color>
+    <color name="text_color_outside_shape_light">#433633</color>
+    <color name="image_color_light">#5c5552</color>
+    <color name="game_result_shape_color_light">#decbb7</color>
+    <color name="sum_value_color_light">#222725</color>
+    <color name="added_value_color_light">#decbb7</color>
+
+    <color name="background_screen_dark">#0d1b2a</color>
+    <color name="button_background_color_dark">#e0e1dd</color>
+    <color name="text_color_inside_shape_dark">#0d1b2a</color>
+    <color name="text_color_outside_shape_dark">#e0e1dd</color>
+    <color name="image_color_dark">#778da9</color>
+    <color name="game_result_shape_color_dark">#415a77</color>
+    <color name="sum_value_color_dark">#1c2541</color>
+    <color name="added_value_color_dark">#3a506b</color>
+
+    <color name="progress_loss_color">#c52233</color>
+    <color name="progress_success_color">#8f857d</color>
+
 </resources>

@@ -2,19 +2,114 @@
     <!-- Base application theme. -->
     <style name="Theme.Brain" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorPrimary">@color/button_background_color_dark</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">@color/background_screen_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <!-- Customize your theme here. -->
+        <item name="colorControlNormal">@color/background_screen_dark</item>
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="StyleTextViewNight">
-        <item name="android:textColor"></item>
+    <style name="ColorImage">
+        <item name="android:tint">@color/image_color_dark</item>
     </style>
+
+    <style name="BackgroundForFragments">
+        <item name="android:background">@color/background_screen_dark</item>
+    </style>
+
+    <style name="TextViewInWelcomeFragment">
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+    </style>
+
+    <style name="DividerBackgroundWelcomeFragment">
+        <item name="android:background">@color/button_background_color_dark</item>
+    </style>
+
+    <style name="FloatingButtonWelcomeFragment">
+        <item name="android:backgroundTint">@color/button_background_color_dark</item>
+        <item name="tint">@color/text_color_inside_shape_dark</item>
+    </style>
+
+    <style name="ChooseButtonForChooseLevelFragment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">2</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/text_color_inside_shape_dark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="backgroundTint">@color/button_background_color_dark</item>
+    </style>
+
+    <style name="TitleChooseLevelFragment">
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+    </style>
+
+    <style name="TimerGameFragment">
+        <item name="android:textColor">@color/text_color_inside_shape_dark</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="backgroundTint">@color/button_background_color_dark</item>
+    </style>
+
+    <style name="SumValueGameFragment">
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:backgroundTint">@color/sum_value_color_dark</item>
+    </style>
+
+    <style name="AddendValuesGameFragment">
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:backgroundTint">@color/added_value_color_dark</item>
+    </style>
+
+    <style name="ProgressValueGameFragment">
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+    </style>
+
+    <style name="OptionAnswerGameFragment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">@drawable/rounded_button</item>
+        <item name="android:fontFamily">@font/cambay_bold</item>
+        <item name="android:textColor">@color/text_color_inside_shape_dark</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/button_background_color_dark</item>
+    </style>
+
+    <style name="ButtonForGameFinishedFragment">
+        <item name="android:textColor">@color/text_color_inside_shape_dark</item>
+        <item name="backgroundTint">@color/button_background_color_dark</item>
+    </style>
+
+    <style name="GameResultGameFinishedFragment">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">25dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:background">@drawable/background_for_result</item>
+        <item name="android:fontFamily">@font/cambay</item>
+        <item name="android:gravity">center</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textColor">@color/text_color_outside_shape_dark</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:lines">2</item>
+        <item name="backgroundTint">@color/game_result_shape_color_dark</item>
+    </style>
+
 </resources>

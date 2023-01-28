@@ -6,6 +6,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
 import com.google.android.material.progressindicator.LinearProgressIndicator
+import ru.game.brain.R
 
 interface OnClickChooseAnswer {
     fun clickChooseAnswer(option: Int)
@@ -35,9 +36,9 @@ fun onClickChooseAnswer(textView: TextView, clickListener: OnClickChooseAnswer) 
 
 private fun getColorRes(view: View, success: Boolean): Int {
     val colorResId = if (success) {
-        android.R.color.darker_gray
+        R.color.progress_success_color
     } else {
-        android.R.color.black
+        R.color.progress_loss_color
     }
     return ContextCompat.getColor(view.context, colorResId)
 }

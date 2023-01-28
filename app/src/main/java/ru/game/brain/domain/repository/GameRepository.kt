@@ -6,7 +6,7 @@ import ru.game.brain.domain.model.Question
 
 interface GameRepository {
 
-    fun generateQuestion(maxSumValue: Int, countOfQuestion: Int): Question
+    suspend fun generateQuestion(maxSumValue: Int, countOfQuestion: Int): Question
 
     fun getGameSettings(level: Level): GameSettings
 }
